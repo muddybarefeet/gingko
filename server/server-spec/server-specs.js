@@ -4,6 +4,7 @@ var assert = require('assert');
 var Mocha = require('mocha');
 var expect = require('chai').expect;
 
+//our one test that may or may not be working!! sorry!
 describe("Meals and user insertion to database successful", function() {
 
   it("Should insert new user to user database", function() { //no argument needed here bluebird thing when using mocha
@@ -11,7 +12,7 @@ describe("Meals and user insertion to database successful", function() {
 
     return requestAsync({method: "POST", uri: "http://127.0.0.1:4568/api/users", json: {firstName: "Anna", lastName: "Rogers"}})
     .then(function (data) {
-      //CHECK DATA OBJECTS PROPERTIES
+      //CHECK DATA OBJECTS PROPERTIES might need to use the done() like in the assessment?
       expect(data.firstName).to.equal("Anna");
     });
     
